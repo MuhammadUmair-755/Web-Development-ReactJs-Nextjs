@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {
+      "id": "93dd",
+      "cityName": "Montan",
+      "country": "Spain",
+      "emoji": "🇪🇸",
+      "date": "2025-11-26T14:31:22.115Z",
+      "notes": "",
+      "position": {
+        "lat": "40.04443758460859",
+        "lng": "-0.5548095703125001"
+      }
+    },
+    {
+      "id": "8059",
+      "cityName": "Lisbon",
+      "country": "Portugal",
+      "emoji": "🇵🇹",
+      "date": "2025-12-01T19:40:09.048Z",
+      "notes": "",
+      "position": {
+        "lat": "38.724090458956965",
+        "lng": "-9.126892089843752"
+      }
+    }
+  ]
+}
