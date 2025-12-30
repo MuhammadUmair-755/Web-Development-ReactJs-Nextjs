@@ -7,8 +7,10 @@ import { Suspense } from "react";
 // export const metadata = {
 //     title: "Cabin Details",
 // }
+
 export async function generateMetadata({ params }) {
-  const { name } = await getCabin(params.cabinid);
+  const { cabinid } = await params;
+  const { name } = await getCabin(cabinid);
   return {
     title: `Cabin ${name}`,
   };
@@ -16,13 +18,19 @@ export async function generateMetadata({ params }) {
 
 export async function generateStaticParams() {
   // Fetch all cabins to pre-render their pages
-  const cabins = await getCabins();
-  const ids = cabins.map((cabin) => ({ cabinid: String(cabin.id) }));
-  return ids;
+ try {
+    const cabins = await getCabins();
+    if (!cabins) return [];
+    return cabins.map((cabin) => ({ cabinid: String(cabin.id) }));
+  } catch (error) {
+    console.error("Build time fetch error:", error);
+    return [];
+  }
 }
 
 export default async function Page({ params }) {
-  const cabin = await getCabin(params.cabinid);
+  const { cabinid } = await params;
+  const cabin = await getCabin(cabinid);
 
   return (
     <div className="max-w-8xl sm:max-w-6xl mx-auto mt-8">

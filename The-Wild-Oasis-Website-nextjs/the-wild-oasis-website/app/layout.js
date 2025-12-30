@@ -2,6 +2,7 @@ import Header from "./_components/Header";
 import "@/app/_styles/globals.css";
 import { Josefin_Sans } from "next/font/google";
 import { ReservationProvider } from "./_components/ReservationContext";
+// import { Suspense } from "react";
 const josefin = Josefin_Sans({
   subsets: ["latin"],
   display: "swap",
@@ -23,7 +24,9 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="flex-1 md:px-4 py-12">
           <main className="mx-10">
-            <ReservationProvider>{children}</ReservationProvider>
+            <ReservationProvider>
+              {children}
+            </ReservationProvider>
           </main>
         </div>
       </body>
