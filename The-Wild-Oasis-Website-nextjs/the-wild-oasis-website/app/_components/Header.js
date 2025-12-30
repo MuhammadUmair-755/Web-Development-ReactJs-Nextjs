@@ -6,7 +6,7 @@ import HeaderToggler from "./HeaderToggler";
 
 function Header() {
   return (
-    <header className="border-b border-primary-900 px-4 md:px-8 py-5 mx-10">
+    <header className="border-b border-primary-900 px-4 md:px-8 py-5  md:mx-10">
       <div className="flex justify-between items-center">
         <Logo />
         <HeaderToggler>
