@@ -40,7 +40,7 @@ export default async function Navigation() {
           ) : (
             <Link
               href="/account"
-              className="text-xl sm:text-3xl md:text-4xl lg:text-6xl hover:text-accent-400 transition-colors"
+              className="text-lg sm:text-xl md:text-3xl hover:text-accent-400 transition-colors"
             >
               Guest Area
             </Link>
