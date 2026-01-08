@@ -1,0 +1,66 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+@theme {
+  /* --- Default (Light Mode) Hex Codes --- */
+  --color-primary: #ffffff;    /* Light mode background */
+  --color-secondary: #f1f5f9;  /* Light mode buttons/search */
+  --color-app-text: #000000;   /* Light mode text */
+
+  /* Gradient Colors (Dono mode mein same rahenge) */
+  --color-insta-pink: #DD00AE;
+  --color-insta-gold: #FFC500;
+}
+
+/* --- Dark Mode Overrides (Using Hex Directly) --- */
+@variant dark (&:where(.dark, .dark *));
+
+.dark {
+  /* Jab dark class active hogi, to ye hex codes purano ko replace kar denge */
+  --color-primary: #0C1014;    /* Aapka dark surface */
+  --color-secondary: #25292E;  /* Buttons aur Search bar background */
+  --color-app-text: #F5F5F5;   /* Dark mode text */   --background: oklch(0.145 0 0);   --foreground: oklch(0.985 0 0);   --card: oklch(0.205 0 0);   --card-foreground: oklch(0.985 0 0);   --popover: oklch(0.205 0 0);   --popover-foreground: oklch(0.985 0 0);   --primary: oklch(0.922 0 0);   --primary-foreground: oklch(0.205 0 0);   --secondary: oklch(0.269 0 0);   --secondary-foreground: oklch(0.985 0 0);   --muted: oklch(0.269 0 0);   --muted-foreground: oklch(0.708 0 0);   --accent: oklch(0.269 0 0);   --accent-foreground: oklch(0.985 0 0);   --destructive: oklch(0.704 0.191 22.216);   --border: oklch(1 0 0 / 10%);   --input: oklch(1 0 0 / 15%);   --ring: oklch(0.556 0 0);   --chart-1: oklch(0.488 0.243 264.376);   --chart-2: oklch(0.696 0.17 162.48);   --chart-3: oklch(0.769 0.188 70.08);   --chart-4: oklch(0.627 0.265 303.9);   --chart-5: oklch(0.645 0.246 16.439);   --sidebar: oklch(0.205 0 0);   --sidebar-foreground: oklch(0.985 0 0);   --sidebar-primary: oklch(0.488 0.243 264.376);   --sidebar-primary-foreground: oklch(0.985 0 0);   --sidebar-accent: oklch(0.269 0 0);   --sidebar-accent-foreground: oklch(0.985 0 0);   --sidebar-border: oklch(1 0 0 / 10%);   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* Base styles taake default background set ho jaye */
+body {
+  background-color: var(--color-primary);
+  color: var(--color-app-text);
+}
+@utility scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+  .scrollbar-custom::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Scrollbar ka track (background) */
+  .scrollbar-custom::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Scrollbar ka handle (thumb) */
+  .scrollbar-custom::-webkit-scrollbar-thumb {
+    background: #dbdbdb; /* Instagram jaisa light gray */
+    border-radius: 10px;
+  }
+
+  /* Hover par handle ka color */
+  .scrollbar-custom::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+  }
+}
+
+
+@layer components{
+  .navBtn{
+    @apply h-7 w-7
+  }
+  .postBtn{
+   @apply h-9 w-9 hover:scale-125 cursor-pointer transition-all duration-150 ease-out
+  }
+}
