@@ -4,7 +4,7 @@ function Search() {
     return (
         <div className="flex items-center gap-1.5 bg-secondary rounded-4xl px-3 py-2.5">
             <SearchIcon className="h-5"/>
-           <input className="text-app-text focus:outline-none" placeholder="Search"/> 
+           <input className="text-app-text focus:outline-none  text-sm w-20" placeholder="Search"/> 
         </div>
     )
 }
