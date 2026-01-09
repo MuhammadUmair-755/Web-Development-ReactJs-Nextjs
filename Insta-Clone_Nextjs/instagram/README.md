@@ -8,7 +8,9 @@
 A fully functional, high-performance Instagram clone built with the modern web stack. This project features a seamless user experience from secure authentication to real-time social interactions.
 
 ---
-
+---
+**🚀 Live Demo:** [instagram-clone-alpha-six.vercel.app](https://instagram-clone-alpha-six.vercel.app)
+---
 ## ✨ Core Features
 
 * **🔐 Secure Authentication**: One-tap sign-in using **Google OAuth 2.0** powered by NextAuth.js (Auth.js).
