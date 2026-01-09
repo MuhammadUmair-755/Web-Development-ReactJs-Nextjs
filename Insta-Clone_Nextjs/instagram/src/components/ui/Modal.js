@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TOGGLE } from "@/app/slices/modalSlice";
 import { useSession } from "next-auth/react";
 import { db, storage } from "@/app/lib/firebase";
-import { addDoc, doc, collection, serverTimestamp } from "@firebase/firestore";
+import { addDoc, doc, collection, serverTimestamp, updateDoc } from "@firebase/firestore";
 import { ref, getDownloadURL, uploadString } from "firebase/storage";
 
 export default function Modal() {
@@ -29,9 +29,9 @@ export default function Modal() {
     setLoading(true);
 
     const docRef = await addDoc(collection(db, "posts"), {
-      username: session?.user?.username,
+      username: session?.user?.username || "GuestUser",
       caption: captionRef.current.value,
-      profileImg: session?.user?.image,
+      profileImg: session?.user?.image || "",
       image: selectedFile,
       timestamp: serverTimestamp(),
     });
