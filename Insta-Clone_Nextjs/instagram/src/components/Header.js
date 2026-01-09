@@ -7,7 +7,7 @@ function Header() {
   return (
     <div className="shadow-sm top-0 z-50 sticky bg-primary px-3 flex items-center justify-between md:hidden">
       <Logo />
-      <div className="flex gap-4">        
+      <div className="flex gap-1">        
         <Search/>
         <ThemeToggle/>
         <div>
